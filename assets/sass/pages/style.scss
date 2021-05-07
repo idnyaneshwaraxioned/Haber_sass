@@ -113,7 +113,124 @@ header {
 /*=================================
   main styling starts here
 =================================*/
+/* Banner start here */
+.banner {
+	position: relative;
+	.wrapper {
+		width: 55%;
+		padding: 11px 0;
+		@include flex (flex,space-between,center);
+		@include position(absolute,unset,50%){
+			bottom: 0;
+			transform: translateX(-50%);
+		}
+		background-color: $secondary-color;
+		color: $primary-color;
+    text-align: center;
+		.banner__slider {
+			@include flex (flex,space-between,center);
+			.banner__slide { 
+				display: none;
+				p {
+					padding: 0 35px;
+					font-size: 38px;
+					font-weight: bold;
+				}
+			};
+			.banner__slide--active {
+				display: block;
+			}
+		}
+		.slider_btn a{
+			&::after {
+				content: '\f053';
+				margin: 0 35px;
+				color: $primary-color;
+				font-family:fontAwesome;
+				font-size: 30px;
+			}
+			span {
+				@extend %text-indent;
+			}
+		}
+		.slider_btn--next a::after {
+			content: '\f054';
+		}
+	}
+}
+/* Banner ends here */
 
+/* Focus section starts here */
+.section__heading {
+	margin: 20px 0;
+	color: lighten($dark,18%);
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.focus {
+	.wrapper {
+		padding: 3.3% 0 2%;
+		text-align: center;
+		.focus__list {
+			@include flex (flex,space-between,center);
+			.focus__item {
+				width: 22%;
+				.icon {
+					width: 90px;
+					height: 63px;
+					border-radius: 50%;
+					margin: 0 auto;
+					position: relative;
+					background-color: $secondary-color;
+					color: $primary-color;
+					font-size: 35px;
+					&::after {
+						@include position (absolute,50%,50%){
+							transform: translate(-50%,-50%);
+							font-family: fontAwesome;
+						}
+					}
+					span {
+						@extend %text-indent;
+					}
+				}
+				.icon--banking::after {content: '\f19c';}
+				.icon--saving::after {content: '\f019';}
+				.icon--budgeting::after {content: '\f1da';}
+				.icon--idea::after {content: '\f0eb';}
+			}
+			h3 {
+				width: 45%;
+				margin: 20px auto;
+				color: lighten($dark,30%);
+				font-size: 20px;
+				font-weight: bold;
+			}
+			p {
+				color: lighten($dark, 70%);
+				font-size: 15px;
+				font-weight: bold;
+				line-height: 22px;
+			}
+			.focus__btn a {
+				$btn-border:lighten($dark, 70%);
+				@include border(1px,solid,$btn-border);
+				margin: 15px 0;
+				@extend %btn-primary;
+				color: lighten($dark,30%);
+			}
+		}	
+	}
+}
+/* Focus section ends here */
+
+/* Advice section start here */
+.advice {
+	background-color: $bg-secondary;
+	text-align: center;
+}
+/* Advice section ends here */
 /*=================================
   main styling ends here
 =================================*/

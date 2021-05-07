@@ -117,7 +117,25 @@ li {
   margin: 0 auto;
 }
 
-.header__social span, .bar1,
+.focus .wrapper .focus__list .focus__btn a {
+  padding: 10px 22px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: ease 0.4s;
+}
+.focus .wrapper .focus__list .focus__btn a:hover {
+  background-color: #b24e1d;
+  color: #fff;
+}
+@media screen and (max-width: 995px) {
+  .focus .wrapper .focus__list .focus__btn a {
+    background: #DC6226;
+    color: #fff;
+    box-shadow: none;
+  }
+}
+
+.focus .wrapper .focus__list .focus__item .icon span, .banner .wrapper .slider_btn a span, .header__social span, .bar1,
 .bar2,
 .bar3 {
   text-indent: -99999px;
@@ -275,6 +293,141 @@ header .wrapper .header__nav .header__menu .menu__item--active {
 /*=================================
   main styling starts here
 =================================*/
+/* Banner start here */
+.banner {
+  position: relative;
+}
+.banner .wrapper {
+  width: 55%;
+  padding: 11px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: unset;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: #DC6226;
+  color: #fff;
+  text-align: center;
+}
+.banner .wrapper .banner__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner .wrapper .banner__slider .banner__slide {
+  display: none;
+}
+.banner .wrapper .banner__slider .banner__slide p {
+  padding: 0 35px;
+  font-size: 38px;
+  font-weight: bold;
+}
+.banner .wrapper .banner__slider .banner__slide--active {
+  display: block;
+}
+.banner .wrapper .slider_btn a::after {
+  content: "";
+  margin: 0 35px;
+  color: #fff;
+  font-family: fontAwesome;
+  font-size: 30px;
+}
+.banner .wrapper .slider_btn--next a::after {
+  content: "";
+}
+
+/* Banner ends here */
+/* Focus section starts here */
+.section__heading {
+  margin: 20px 0;
+  color: #2e2e2e;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.focus .wrapper {
+  padding: 3.3% 0 2%;
+  text-align: center;
+}
+.focus .wrapper .focus__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+.focus .wrapper .focus__list .focus__item {
+  width: 22%;
+}
+.focus .wrapper .focus__list .focus__item .icon {
+  width: 90px;
+  height: 63px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  background-color: #DC6226;
+  color: #fff;
+  font-size: 35px;
+}
+.focus .wrapper .focus__list .focus__item .icon::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: fontAwesome;
+}
+.focus .wrapper .focus__list .focus__item .icon--banking::after {
+  content: "";
+}
+.focus .wrapper .focus__list .focus__item .icon--saving::after {
+  content: "";
+}
+.focus .wrapper .focus__list .focus__item .icon--budgeting::after {
+  content: "";
+}
+.focus .wrapper .focus__list .focus__item .icon--idea::after {
+  content: "";
+}
+.focus .wrapper .focus__list h3 {
+  width: 45%;
+  margin: 20px auto;
+  color: #4d4d4d;
+  font-size: 20px;
+  font-weight: bold;
+}
+.focus .wrapper .focus__list p {
+  color: #b3b3b3;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+}
+.focus .wrapper .focus__list .focus__btn a {
+  border: 1px solid #b3b3b3;
+  margin: 15px 0;
+  color: #4d4d4d;
+}
+
+/* Focus section ends here */
+/* Advice section start here */
+.advice {
+  background-color: #E8EDF1;
+  text-align: center;
+}
+
+/* Advice section ends here */
 /*=================================
   main styling ends here
 =================================*/

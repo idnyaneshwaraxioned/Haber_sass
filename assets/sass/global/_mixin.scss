@@ -18,8 +18,8 @@
 	@content;
 }
 
-@mixin border($direction, $width, $style, $color) {
-	border-#{$direction}: $width $style $color;
+@mixin border($width, $style, $color) {
+	border: $width $style $color;
 }
 
 @mixin media ($width) {
@@ -29,14 +29,13 @@
 }
 
 %btn-primary{
-	padding: 15px 30px;  
-	border-radius: 5px;
-	background: $secondary-color;
-	color: $primary-color;
+    padding: 10px 22px;
+	font-size: 18px;
+	font-weight: bold;
+	transition: ease .4s;
 	&:hover {
-			background-color: darken($primary-color, 10%);
-			color: $secondary-color;
-			box-shadow: 0 0 10px $dark;
+			background-color: darken($secondary-color, 10%);
+			color: $primary-color;
 	}
 	@include media(995px){
 		background: $secondary-color;
