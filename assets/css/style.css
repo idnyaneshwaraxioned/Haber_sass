@@ -117,18 +117,18 @@ li {
   margin: 0 auto;
 }
 
-.focus .wrapper .focus__list .focus__btn a {
+.learing__btn a, .focus .wrapper .focus__list .focus__btn a {
   padding: 10px 22px;
   font-size: 18px;
   font-weight: bold;
   transition: ease 0.4s;
 }
-.focus .wrapper .focus__list .focus__btn a:hover {
+.learing__btn a:hover, .focus .wrapper .focus__list .focus__btn a:hover {
   background-color: #b24e1d;
   color: #fff;
 }
 @media screen and (max-width: 995px) {
-  .focus .wrapper .focus__list .focus__btn a {
+  .learing__btn a, .focus .wrapper .focus__list .focus__btn a {
     background: #DC6226;
     color: #fff;
     box-shadow: none;
@@ -476,6 +476,70 @@ header .wrapper .header__nav .header__menu .menu__item--active {
   color: #2e2e2e;
 }
 /* Advice section ends here */
+/* Learing section start here */
+.learning {
+  color: #f2f2f2;
+  text-align: left;
+}
+.learning .wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.freshinvestment {
+  width: 50%;
+  padding: 20px 4% 20px;
+  background-color: #DC6226;
+}
+
+.savemoney {
+  width: 50%;
+  padding: 20px 0 16px 7%;
+  background-color: #404A53;
+}
+.savemoney p {
+  padding-right: 10%;
+  color: #b1b6bc;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+.savemoney li {
+  color: #b1b6bc;
+}
+
+.learning__list li {
+  display: block;
+  font-size: 20px;
+  line-height: 35px;
+}
+.learning__list li::before {
+  content: "";
+  margin-right: 25px;
+  color: #f2f2f2;
+  font-size: 18px;
+  font-family: fontAwesome;
+}
+
+.learing__btn a {
+  border: 2px solid #fff;
+  margin: 20px 0;
+  color: #f2f2f2;
+}
+
+.learning .wrapper h5 {
+  margin: 20px 0;
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Learing section ends here */
 /*=================================
   main styling ends here
 =================================*/

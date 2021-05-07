@@ -278,6 +278,64 @@ header {
 	}
 }
 /* Advice section ends here */
+
+/* Learing section start here */
+.learning {
+	color: darken($primary-color,5%);
+	text-align: left;
+	.wrapper {
+		width: 100%;
+		@include flex(flex,space-between,flex-start);
+		@at-root{
+			.freshinvestment {
+				width: 50%;
+				padding: 20px 4% 20px;
+				background-color: $secondary-color;
+
+			}
+			.savemoney {
+				width: 50%;
+				padding: 20px 0 16px 7%;
+				background-color: $bg-primary;
+				p {
+					padding-right: 10%;
+					color:$para-color;
+					font-size: 18px;
+					line-height: 25px;
+					letter-spacing: 1px;
+				}
+				li { color: $para-color;}
+			}
+			.learning__list {
+				li {
+					display: block;
+					font-size: 20px;
+					line-height: 35px;
+					&::before {
+						content: '\f013';
+						margin-right: 25px;
+						color: darken($primary-color,5%);
+						font-size: 18px;
+						font-family: fontAwesome;
+					}
+				}
+			}
+			.learing__btn a {
+				@extend %btn-primary;
+				@include border(2px,solid, $primary-color);
+				margin: 20px 0;
+				color: darken($primary-color,5%);
+			}
+		}
+		h5 {
+			margin: 20px 0;
+			font-size: 38px;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+	}
+}
+/* Learing section ends here */
 /*=================================
   main styling ends here
 =================================*/
