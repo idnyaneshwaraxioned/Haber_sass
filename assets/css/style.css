@@ -1,0 +1,589 @@
+@charset "UTF-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+input[type=radio] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+label,
+input[type=button],
+input[type=submit],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.7em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* 1.2. Clear Fix
+   ========================== */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1838px;
+  width: 92.5%;
+  margin: 0 auto;
+}
+
+.learing__btn a, .focus .wrapper .focus__list .focus__btn a {
+  padding: 10px 22px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: ease 0.4s;
+}
+.learing__btn a:hover, .focus .wrapper .focus__list .focus__btn a:hover {
+  background-color: #b24e1d;
+  color: #fff;
+}
+@media screen and (max-width: 995px) {
+  .learing__btn a, .focus .wrapper .focus__list .focus__btn a {
+    background: #DC6226;
+    color: #fff;
+    box-shadow: none;
+  }
+}
+
+.brands .wrapper .brand_btn a span, .advice__item .advice__btn a span, .focus .wrapper .focus__list .focus__item .icon span, .banner .wrapper .slider_btn a span, .header__social span, .bar1,
+.bar2,
+.bar3 {
+  text-indent: -99999px;
+  float: left;
+}
+
+.advice .wrapper .advice__list p, .focus .wrapper .focus__list p {
+  color: #b3b3b3;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+/*=================================
+  Header styling starts here
+=================================*/
+.hamburger {
+  width: 40px;
+  height: 40px;
+  display: none;
+  position: absolute;
+  top: 4%;
+  left: 90%;
+  z-index: 10;
+}
+@media screen and (max-width: 995px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 100%;
+  height: 0;
+  border-top: 2px solid #fff;
+  margin-bottom: 6px;
+}
+
+.hamburger:hover .bar1 {
+  transform: rotate(45deg) translateX(7px);
+}
+
+.hamburger:hover .bar2 {
+  display: none;
+}
+
+.hamburger:hover .bar3 {
+  transform: rotate(-45deg) translateX(5px);
+}
+
+.hamburger:hover ~ .header__menu {
+  display: flex;
+}
+
+header {
+  background-color: #404A53;
+}
+header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header .wrapper a {
+  color: #f2f2f2;
+}
+header .wrapper .header__logo {
+  width: 19.5%;
+  padding: 25px 0;
+  background-color: #DC6226;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+header .wrapper .header__nav {
+  width: 74%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+header .wrapper .header__nav .header__menu {
+  width: 57%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+header .wrapper .header__nav .header__menu li {
+  position: relative;
+}
+header .wrapper .header__nav .header__menu li:hover .menu__dropdown {
+  display: block;
+}
+header .wrapper .header__nav .header__menu li:nth-child(2)::after {
+  content: "";
+  color: #DC6226;
+  font-family: fontAwesome;
+  position: absolute;
+  top: 75%;
+  left: 40%;
+}
+header .wrapper .header__nav .header__menu .menu__item, header .wrapper .header__nav .header__menu a {
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: ease 0.4s;
+}
+header .wrapper .header__nav .header__menu .menu__item:hover, header .wrapper .header__nav .header__menu a:hover {
+  color: #DC6226;
+}
+header .wrapper .header__nav .header__menu .menu__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 2%;
+  z-index: 3;
+}
+header .wrapper .header__nav .header__menu .menu__dropdown li {
+  display: block;
+}
+header .wrapper .header__nav .header__menu .menu__item--active {
+  color: #DC6226;
+}
+.header__social .social__item::after {
+  margin-left: 21px;
+  color: #858585;
+  font-family: fontAwesome;
+  font-size: 30px;
+}
+.header__social .social__item--twitter::after {
+  content: "";
+}
+.header__social .social__item--youtube::after {
+  content: "";
+}
+.header__social .social__item--rss::after {
+  content: "";
+}
+.header__social .social__item--facebook::after {
+  content: "";
+}
+.header__social .social__item--google::after {
+  content: "";
+}
+/*=================================
+  Header styling ends here
+=================================*/
+/*=================================
+  main styling starts here
+=================================*/
+/* Banner start here */
+.banner {
+  position: relative;
+}
+.banner .wrapper {
+  width: 55%;
+  padding: 11px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: unset;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: #DC6226;
+  color: #fff;
+  text-align: center;
+}
+.banner .wrapper .banner__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner .wrapper .banner__slider .banner__slide {
+  display: none;
+}
+.banner .wrapper .banner__slider .banner__slide p {
+  padding: 0 35px;
+  font-size: 38px;
+  font-weight: bold;
+}
+.banner .wrapper .banner__slider .banner__slide--active {
+  display: block;
+}
+.banner .wrapper .slider_btn a::after {
+  content: "";
+  margin: 0 35px;
+  color: #fff;
+  font-family: fontAwesome;
+  font-size: 30px;
+}
+.banner .wrapper .slider_btn--next a::after {
+  content: "";
+}
+
+/* Banner ends here */
+/* Focus section starts here */
+.section__heading {
+  margin: 20px 0;
+  color: #2e2e2e;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.focus .wrapper {
+  padding: 3.3% 0 2%;
+  text-align: center;
+}
+.focus .wrapper .focus__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+.focus .wrapper .focus__list .focus__item {
+  width: 22%;
+}
+.focus .wrapper .focus__list .focus__item .icon {
+  width: 90px;
+  height: 63px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  background-color: #DC6226;
+  color: #fff;
+  font-size: 35px;
+}
+.focus .wrapper .focus__list .focus__item .icon::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: fontAwesome;
+}
+.focus .wrapper .focus__list .focus__item .icon--banking::after {
+  content: "";
+}
+.focus .wrapper .focus__list .focus__item .icon--saving::after {
+  content: "";
+}
+.focus .wrapper .focus__list .focus__item .icon--budgeting::after {
+  content: "";
+}
+.focus .wrapper .focus__list .focus__item .icon--idea::after {
+  content: "";
+}
+.focus .wrapper .focus__list h3 {
+  width: 45%;
+  margin: 20px auto;
+  color: #4d4d4d;
+  font-size: 20px;
+  font-weight: bold;
+}
+.focus .wrapper .focus__list .focus__btn a {
+  border: 1px solid #b3b3b3;
+  margin: 15px 0;
+  color: #4d4d4d;
+}
+
+/* Focus section ends here */
+/* Advice section start here */
+.advice {
+  background-color: #E8EDF1;
+  text-align: center;
+}
+.advice .wrapper {
+  padding: 40px 0;
+}
+.advice .wrapper p {
+  padding: 0 30px;
+  color: #4d4d4d;
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: bold;
+}
+.advice .wrapper .advice__list p {
+  margin: 6px 0;
+}
+.advice__list {
+  margin: 41px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.advice__item {
+  width: 30%;
+  padding: 10px 15px 31px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+.advice__item h4 {
+  margin-top: 35px;
+  color: #DC6226;
+  font-size: 35px;
+  font-weight: bold;
+}
+.advice__item .advice__btn a {
+  margin: 10px 0;
+  display: inline-block;
+}
+.advice__item .advice__btn a::after {
+  content: "";
+  padding: 2px 3px;
+  border: 3px solid #2e2e2e;
+  border-radius: 50%;
+  font-family: fontAwesome;
+  color: #2e2e2e;
+}
+/* Advice section ends here */
+/* Learing section start here */
+.learning {
+  color: #f2f2f2;
+  text-align: left;
+}
+.learning .wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.freshinvestment {
+  width: 50%;
+  padding: 20px 4% 20px;
+  background-color: #DC6226;
+}
+
+.savemoney {
+  width: 50%;
+  padding: 20px 0 16px 7%;
+  background-color: #404A53;
+}
+.savemoney p {
+  padding-right: 10%;
+  color: #b1b6bc;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+.savemoney li {
+  color: #b1b6bc;
+}
+
+.learning__list li {
+  display: block;
+  font-size: 20px;
+  line-height: 35px;
+}
+.learning__list li::before {
+  content: "";
+  margin-right: 25px;
+  color: #f2f2f2;
+  font-size: 18px;
+  font-family: fontAwesome;
+}
+
+.learing__btn a {
+  border: 2px solid #fff;
+  margin: 20px 0;
+  color: #f2f2f2;
+}
+
+.learning .wrapper h5 {
+  margin: 20px 0;
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Learing section ends here */
+/* Brands section start here */
+.brands .wrapper {
+  padding: 35px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+.brands .wrapper .brand_btn a::after {
+  content: "";
+  margin: 0 35px;
+  color: #1a1a1a;
+  font-family: fontAwesome;
+  font-size: 20px;
+}
+.brands .wrapper .brand_btn--next a::after {
+  content: "";
+}
+.brands .wrapper .brand__slider {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+.brands .wrapper .brand__slider .brand__slide {
+  margin: 0 5%;
+}
+
+/* Brands section ends here */
+/*=================================
+  main styling ends here
+=================================*/
+/*=================================
+  footer styling starts here
+=================================*/
+/*=================================
+  footer styling ends here
+=================================*/
+
+/*# sourceMappingURL=style.css.map */

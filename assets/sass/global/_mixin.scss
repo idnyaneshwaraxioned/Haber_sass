@@ -1,0 +1,63 @@
+@import './variables';
+
+@mixin flex ($display,$justify,$align) {
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:$display;
+	-webkit-box-pack:$justify;
+		-ms-flex-pack:$justify;
+			justify-content:$justify;
+	align-items:$align;     
+	@content;
+}
+
+@mixin position ($position,$top,$left) {
+	position: $position;
+	top: $top;
+	left: $left;
+	@content;
+}
+
+@mixin border($width, $style, $color) {
+	border: $width $style $color;
+}
+
+@mixin media ($width) {
+	@media screen and (max-width:$width){
+		@content;
+	}
+}
+
+%btn-primary{
+    padding: 10px 22px;
+	font-size: 18px;
+	font-weight: bold;
+	transition: ease .4s;
+	&:hover {
+			background-color: darken($secondary-color, 10%);
+			color: $primary-color;
+	}
+	@include media(995px){
+		background: $secondary-color;
+		color: $primary-color;
+		box-shadow: none;
+	}
+}
+
+%text-indent {
+	text-indent: -99999px;
+	float: left;
+}
+
+%input {
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+}
+
+%para {
+	color: lighten($dark, 70%);
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 22px;
+}
