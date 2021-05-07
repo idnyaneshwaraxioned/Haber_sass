@@ -1,0 +1,381 @@
+@import '../global/reset';
+@import '../global/variables';
+@import '../global/mixin';
+
+/*=================================
+  Header styling starts here
+=================================*/
+.hamburger { 
+	width: 40px;
+	height: 40px;
+	display: none;
+	@include position(absolute,4%,90%);
+	z-index: 10;
+	@include media (995px){
+		display: block;
+	}
+}
+  
+.bar1,
+.bar2,
+.bar3 {
+	width: 100%;
+	height: 0;
+	border-top: 2px solid $primary-color;
+	margin-bottom: 6px;
+	@extend %text-indent;
+}
+
+.hamburger:hover .bar1 { transform: rotate(45deg) translateX(7px); }
+.hamburger:hover .bar2 { display: none; }
+.hamburger:hover .bar3 { transform: rotate(-45deg) translateX(5px); }
+
+.hamburger:hover ~ .header__menu{ display: flex; }
+
+header {
+	background-color: $bg-primary;
+	.wrapper {
+		@include flex (flex,space-between,center) {
+			flex-wrap: wrap;
+		};
+		a {
+			color: darken($primary-color,5%);
+		}
+		.header__logo {
+			width: 19.5%;
+			padding: 25px 0;
+			background-color: $secondary-color;
+			font-size: 48px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.header__nav {
+			width: 74%;
+			@include flex (flex,space-between,center);
+			.header__menu {
+				width: 57%;
+				li {
+					position: relative;
+					&:hover .menu__dropdown {
+						display: block;
+					}
+					&:nth-child(2)::after{
+						content: '\f0d7';
+						color: $secondary-color;
+						font-family: fontAwesome;
+						@include position (absolute,75%,40%)
+					}
+				}
+				@include flex (flex,space-between,center);
+				.menu__item,a {
+					font-weight: bold;
+					font-size: 15px;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					transition: ease .4s;
+						&:hover { color: $secondary-color; }
+				}
+				.menu__dropdown {
+					display: none;
+					@include position(absolute,100%,2%);
+					z-index: 3;
+					li { display: block; }
+				}
+				.menu__item--active { color: $secondary-color; }
+			}
+			@at-root {
+				.header__social {
+					.social__item{
+						&::after {
+							margin-left: 21px;
+							color: lighten($gray,2%);
+							font-family: fontAwesome;
+							font-size: 30px;
+						}
+					}
+					.social__item--twitter::after {content: '\f081';}
+					.social__item--youtube::after { content: '\f167';}
+					.social__item--rss::after { content: '\f09e';}
+					.social__item--facebook::after { content: '\f082';}
+					.social__item--google::after { content: '\f0d5';}
+					span {
+						@extend %text-indent;
+					}
+				}
+			}
+		}
+	}	
+}
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+/* Banner start here */
+.banner {
+	position: relative;
+	.wrapper {
+		width: 55%;
+		padding: 11px 0;
+		@include flex (flex,space-between,center);
+		@include position(absolute,unset,50%){
+			bottom: 0;
+			transform: translateX(-50%);
+		}
+		background-color: $secondary-color;
+		color: $primary-color;
+    text-align: center;
+		.banner__slider {
+			@include flex (flex,space-between,center);
+			.banner__slide { 
+				display: none;
+				p {
+					padding: 0 35px;
+					font-size: 38px;
+					font-weight: bold;
+				}
+			};
+			.banner__slide--active {
+				display: block;
+			}
+		}
+		.slider_btn a{
+			&::after {
+				content: '\f053';
+				margin: 0 35px;
+				color: $primary-color;
+				font-family:fontAwesome;
+				font-size: 30px;
+			}
+			span {
+				@extend %text-indent;
+			}
+		}
+		.slider_btn--next a::after {
+			content: '\f054';
+		}
+	}
+}
+/* Banner ends here */
+
+/* Focus section starts here */
+.section__heading {
+	margin: 20px 0;
+	color: lighten($dark,18%);
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.focus {
+	.wrapper {
+		padding: 3.3% 0 2%;
+		text-align: center;
+		.focus__list {
+			@include flex (flex,space-between,center);
+			.focus__item {
+				width: 22%;
+				.icon {
+					width: 90px;
+					height: 63px;
+					border-radius: 50%;
+					margin: 0 auto;
+					position: relative;
+					background-color: $secondary-color;
+					color: $primary-color;
+					font-size: 35px;
+					&::after {
+						@include position (absolute,50%,50%){
+							transform: translate(-50%,-50%);
+							font-family: fontAwesome;
+						}
+					}
+					span {
+						@extend %text-indent;
+					}
+				}
+				.icon--banking::after {content: '\f19c';}
+				.icon--saving::after {content: '\f019';}
+				.icon--budgeting::after {content: '\f1da';}
+				.icon--idea::after {content: '\f0eb';}
+			}
+			h3 {
+				width: 45%;
+				margin: 20px auto;
+				color: lighten($dark,30%);
+				font-size: 20px;
+				font-weight: bold;
+			}
+			p {
+				@extend %para;
+			}
+			.focus__btn a {
+				$btn-border:lighten($dark, 70%);
+				@include border(1px,solid,$btn-border);
+				margin: 15px 0;
+				@extend %btn-primary;
+				color: lighten($dark,30%);
+			}
+		}	
+	}
+}
+/* Focus section ends here */
+
+/* Advice section start here */
+.advice {
+	background-color: $bg-secondary;
+	text-align: center;
+	.wrapper {
+		padding: 40px 0;
+		p {
+			padding: 0 30px;
+			color: lighten($dark, 30%);
+			font-size: 22px;
+			line-height: 35px;
+			font-weight: bold;
+		}
+		.advice__list p {
+			margin: 6px 0;
+			@extend %para;
+		}
+		@at-root {
+			.advice__list {
+				margin: 41px 0;
+				@include flex (flex,space-between,center);
+			}
+			@at-root {
+				.advice__item {
+					width: 30%;
+					padding: 10px 15px 31px;
+					box-shadow: 0 0 5px rgba(0,0,0,.2);
+					background-color: $primary-color;
+					h4 {
+						margin-top: 35px;
+						color: $secondary-color;
+						font-size: 35px;
+						font-weight: bold;				
+					}
+					.advice__btn a {
+						margin: 10px 0;
+						display: inline-block;
+						&::after {
+							$btn-border: lighten($dark, 18%);
+							content: "\f061";
+							padding: 2px 3px;
+							@include border (3px,solid,$btn-border);
+							border-radius: 50%;
+							font-family: fontAwesome;
+							color: lighten($dark, 18%);
+						}
+						span {
+							@extend %text-indent;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* Advice section ends here */
+
+/* Learing section start here */
+.learning {
+	color: darken($primary-color,5%);
+	text-align: left;
+	.wrapper {
+		width: 100%;
+		@include flex(flex,space-between,flex-start);
+		@at-root{
+			.freshinvestment {
+				width: 50%;
+				padding: 20px 4% 20px;
+				background-color: $secondary-color;
+
+			}
+			.savemoney {
+				width: 50%;
+				padding: 20px 0 16px 7%;
+				background-color: $bg-primary;
+				p {
+					padding-right: 10%;
+					color:$para-color;
+					font-size: 18px;
+					line-height: 25px;
+					letter-spacing: 1px;
+				}
+				li { color: $para-color;}
+			}
+			.learning__list {
+				li {
+					display: block;
+					font-size: 20px;
+					line-height: 35px;
+					&::before {
+						content: '\f013';
+						margin-right: 25px;
+						color: darken($primary-color,5%);
+						font-size: 18px;
+						font-family: fontAwesome;
+					}
+				}
+			}
+			.learing__btn a {
+				@extend %btn-primary;
+				@include border(2px,solid, $primary-color);
+				margin: 20px 0;
+				color: darken($primary-color,5%);
+			}
+		}
+		h5 {
+			margin: 20px 0;
+			font-size: 38px;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+	}
+}
+/* Learing section ends here */
+
+/* Brands section start here */
+.brands {
+	.wrapper {
+		padding: 35px 0;
+		@include flex (flex,space-between,center);
+		.brand_btn a {
+			&::after {
+			content: '\f053';
+			margin: 0 35px;
+			color: lighten($dark, 10%);
+			font-family: fontAwesome;
+			font-size: 20px;
+			}
+			span {
+				@extend %text-indent;
+			}
+		}
+		.brand_btn--next a::after {
+			content: '\f054';
+		}
+		.brand__slider {
+			width: 85%;
+			@include flex(flex,space-between,center);
+			.brand__slide {
+				margin: 0 5%;
+			}
+		}
+	}
+}
+/* Brands section ends here */
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/ 
+
+
+ /*=================================
+  footer styling ends here
+=================================*/   
