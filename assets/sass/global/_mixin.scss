@@ -54,3 +54,10 @@
 	outline: none;
 	box-sizing: border-box;
 }
+
+%para {
+	color: lighten($dark, 70%);
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 22px;
+}

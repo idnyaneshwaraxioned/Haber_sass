@@ -208,10 +208,7 @@ header {
 				font-weight: bold;
 			}
 			p {
-				color: lighten($dark, 70%);
-				font-size: 15px;
-				font-weight: bold;
-				line-height: 22px;
+				@extend %para;
 			}
 			.focus__btn a {
 				$btn-border:lighten($dark, 70%);
@@ -229,6 +226,56 @@ header {
 .advice {
 	background-color: $bg-secondary;
 	text-align: center;
+	.wrapper {
+		padding: 40px 0;
+		p {
+			padding: 0 30px;
+			color: lighten($dark, 30%);
+			font-size: 22px;
+			line-height: 35px;
+			font-weight: bold;
+		}
+		.advice__list p {
+			margin: 6px 0;
+			@extend %para;
+		}
+		@at-root {
+			.advice__list {
+				margin: 41px 0;
+				@include flex (flex,space-between,center);
+			}
+			@at-root {
+				.advice__item {
+					width: 30%;
+					padding: 10px 15px 31px;
+					box-shadow: 0 0 5px rgba(0,0,0,.2);
+					background-color: $primary-color;
+					h4 {
+						margin-top: 35px;
+						color: $secondary-color;
+						font-size: 35px;
+						font-weight: bold;				
+					}
+					.advice__btn a {
+						margin: 10px 0;
+						display: inline-block;
+						&::after {
+							$btn-border: lighten($dark, 18%);
+							content: "\f061";
+							padding: 2px 3px;
+							@include border (3px,solid,$btn-border);
+							border-radius: 50%;
+							font-family: fontAwesome;
+							color: lighten($dark, 18%);
+						}
+						span {
+							@extend %text-indent;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 /* Advice section ends here */
 /*=================================

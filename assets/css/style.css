@@ -135,11 +135,18 @@ li {
   }
 }
 
-.focus .wrapper .focus__list .focus__item .icon span, .banner .wrapper .slider_btn a span, .header__social span, .bar1,
+.advice__item .advice__btn a span, .focus .wrapper .focus__list .focus__item .icon span, .banner .wrapper .slider_btn a span, .header__social span, .bar1,
 .bar2,
 .bar3 {
   text-indent: -99999px;
   float: left;
+}
+
+.advice .wrapper .advice__list p, .focus .wrapper .focus__list p {
+  color: #b3b3b3;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
 }
 
 /*=================================
@@ -408,12 +415,6 @@ header .wrapper .header__nav .header__menu .menu__item--active {
   font-size: 20px;
   font-weight: bold;
 }
-.focus .wrapper .focus__list p {
-  color: #b3b3b3;
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 22px;
-}
 .focus .wrapper .focus__list .focus__btn a {
   border: 1px solid #b3b3b3;
   margin: 15px 0;
@@ -426,7 +427,54 @@ header .wrapper .header__nav .header__menu .menu__item--active {
   background-color: #E8EDF1;
   text-align: center;
 }
+.advice .wrapper {
+  padding: 40px 0;
+}
+.advice .wrapper p {
+  padding: 0 30px;
+  color: #4d4d4d;
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: bold;
+}
+.advice .wrapper .advice__list p {
+  margin: 6px 0;
+}
+.advice__list {
+  margin: 41px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.advice__item {
+  width: 30%;
+  padding: 10px 15px 31px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+.advice__item h4 {
+  margin-top: 35px;
+  color: #DC6226;
+  font-size: 35px;
+  font-weight: bold;
+}
+.advice__item .advice__btn a {
+  margin: 10px 0;
+  display: inline-block;
+}
+.advice__item .advice__btn a::after {
+  content: "";
+  padding: 2px 3px;
+  border: 3px solid #2e2e2e;
+  border-radius: 50%;
+  font-family: fontAwesome;
+  color: #2e2e2e;
+}
 /* Advice section ends here */
 /*=================================
   main styling ends here
