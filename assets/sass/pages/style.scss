@@ -1,0 +1,128 @@
+@import '../global/reset';
+@import '../global/variables';
+@import '../global/mixin';
+
+/*=================================
+  Header styling starts here
+=================================*/
+.hamburger { 
+	width: 40px;
+	height: 40px;
+	display: none;
+	@include position(absolute,4%,90%);
+	z-index: 10;
+	@include media (995px){
+		display: block;
+	}
+}
+  
+.bar1,
+.bar2,
+.bar3 {
+	width: 100%;
+	height: 0;
+	border-top: 2px solid $primary-color;
+	margin-bottom: 6px;
+	@extend %text-indent;
+}
+
+.hamburger:hover .bar1 { transform: rotate(45deg) translateX(7px); }
+.hamburger:hover .bar2 { display: none; }
+.hamburger:hover .bar3 { transform: rotate(-45deg) translateX(5px); }
+
+.hamburger:hover ~ .header__menu{ display: flex; }
+
+header {
+	background-color: $bg-primary;
+	.wrapper {
+		@include flex (flex,space-between,center) {
+			flex-wrap: wrap;
+		};
+		a {
+			color: darken($primary-color,5%);
+		}
+		.header__logo {
+			width: 19.5%;
+			padding: 25px 0;
+			background-color: $secondary-color;
+			font-size: 48px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.header__nav {
+			width: 74%;
+			@include flex (flex,space-between,center);
+			.header__menu {
+				width: 57%;
+				li {
+					position: relative;
+					&:hover .menu__dropdown {
+						display: block;
+					}
+					&:nth-child(2)::after{
+						content: '\f0d7';
+						color: $secondary-color;
+						font-family: fontAwesome;
+						@include position (absolute,75%,40%)
+					}
+				}
+				@include flex (flex,space-between,center);
+				.menu__item,a {
+					font-weight: bold;
+					font-size: 15px;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					transition: ease .4s;
+						&:hover { color: $secondary-color; }
+				}
+				.menu__dropdown {
+					display: none;
+					@include position(absolute,100%,2%);
+					z-index: 3;
+					li { display: block; }
+				}
+				.menu__item--active { color: $secondary-color; }
+			}
+			@at-root {
+				.header__social {
+					.social__item{
+						&::after {
+							margin-left: 21px;
+							color: lighten($gray,2%);
+							font-family: fontAwesome;
+							font-size: 30px;
+						}
+					}
+					.social__item--twitter::after {content: '\f081';}
+					.social__item--youtube::after { content: '\f167';}
+					.social__item--rss::after { content: '\f09e';}
+					.social__item--facebook::after { content: '\f082';}
+					.social__item--google::after { content: '\f0d5';}
+					span {
+						@extend %text-indent;
+					}
+				}
+			}
+		}
+	}	
+}
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/ 
+
+
+ /*=================================
+  footer styling ends here
+=================================*/   

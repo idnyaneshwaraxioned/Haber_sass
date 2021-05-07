@@ -1,8 +1,7 @@
-@charset "utf-8";
+@charset "UTF-8";
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
-
 /* 1.1. Eric Meyers Reset
    http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -30,16 +29,19 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* Force scrollbar */
-html { overflow-y: scroll; }
+html {
+  overflow-y: scroll;
+}
 
 /* Align radios and text inputs with their label */
-
-input[type='radio'] { vertical-align: text-bottom; }
+input[type=radio] {
+  vertical-align: text-bottom;
+}
 
 /* Hand cursor on clickable input elements */
 label,
-input[type='button'],
-input[type='submit'],
+input[type=button],
+input[type=submit],
 button {
   cursor: pointer;
 }
@@ -50,7 +52,9 @@ strong {
   font-size: inherit;
 }
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
 img {
   width: 100%;
@@ -66,20 +70,29 @@ sup {
   line-height: 0;
 }
 
-sup { top: -.7em; }
-sub { bottom: -.25em; }
+sup {
+  top: -0.7em;
+}
+
+sub {
+  bottom: -0.25em;
+}
 
 /* 1.2. Clear Fix
    ========================== */
-
 .cf:before,
 .cf:after {
   display: table;
   content: " ";
 }
 
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
 
 /*for all*/
 body {
@@ -87,9 +100,9 @@ body {
   font-family: sans-serif;
 }
 
-a { 
+a {
   display: inline-block;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 li {
@@ -99,56 +112,177 @@ li {
 
 /*for wrapper*/
 .wrapper {
-  max-width: 1360px;
-  width: 86%; 
+  max-width: 1838px;
+  width: 92.5%;
   margin: 0 auto;
 }
+
+.header__social span, .bar1,
+.bar2,
+.bar3 {
+  text-indent: -99999px;
+  float: left;
+}
+
 /*=================================
   Header styling starts here
 =================================*/
+.hamburger {
+  width: 40px;
+  height: 40px;
+  display: none;
+  position: absolute;
+  top: 4%;
+  left: 90%;
+  z-index: 10;
+}
+@media screen and (max-width: 995px) {
+  .hamburger {
+    display: block;
+  }
+}
 
+.bar1,
+.bar2,
+.bar3 {
+  width: 100%;
+  height: 0;
+  border-top: 2px solid #fff;
+  margin-bottom: 6px;
+}
 
+.hamburger:hover .bar1 {
+  transform: rotate(45deg) translateX(7px);
+}
 
+.hamburger:hover .bar2 {
+  display: none;
+}
 
+.hamburger:hover .bar3 {
+  transform: rotate(-45deg) translateX(5px);
+}
 
+.hamburger:hover ~ .header__menu {
+  display: flex;
+}
 
+header {
+  background-color: #404A53;
+}
+header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header .wrapper a {
+  color: #f2f2f2;
+}
+header .wrapper .header__logo {
+  width: 19.5%;
+  padding: 25px 0;
+  background-color: #DC6226;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+header .wrapper .header__nav {
+  width: 74%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+header .wrapper .header__nav .header__menu {
+  width: 57%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+header .wrapper .header__nav .header__menu li {
+  position: relative;
+}
+header .wrapper .header__nav .header__menu li:hover .menu__dropdown {
+  display: block;
+}
+header .wrapper .header__nav .header__menu li:nth-child(2)::after {
+  content: "";
+  color: #DC6226;
+  font-family: fontAwesome;
+  position: absolute;
+  top: 75%;
+  left: 40%;
+}
+header .wrapper .header__nav .header__menu .menu__item, header .wrapper .header__nav .header__menu a {
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: ease 0.4s;
+}
+header .wrapper .header__nav .header__menu .menu__item:hover, header .wrapper .header__nav .header__menu a:hover {
+  color: #DC6226;
+}
+header .wrapper .header__nav .header__menu .menu__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 2%;
+  z-index: 3;
+}
+header .wrapper .header__nav .header__menu .menu__dropdown li {
+  display: block;
+}
+header .wrapper .header__nav .header__menu .menu__item--active {
+  color: #DC6226;
+}
+.header__social .social__item::after {
+  margin-left: 21px;
+  color: #858585;
+  font-family: fontAwesome;
+  font-size: 30px;
+}
+.header__social .social__item--twitter::after {
+  content: "";
+}
+.header__social .social__item--youtube::after {
+  content: "";
+}
+.header__social .social__item--rss::after {
+  content: "";
+}
+.header__social .social__item--facebook::after {
+  content: "";
+}
+.header__social .social__item--google::after {
+  content: "";
+}
 /*=================================
   Header styling ends here
-=================================*/  
-
+=================================*/
 /*=================================
   main styling starts here
 =================================*/
-
-
-
-
-
-
-
-
 /*=================================
   main styling ends here
 =================================*/
-
 /*=================================
   footer styling starts here
-=================================*/ 
-
-
-
-
-
-
-
- /*=================================
+=================================*/
+/*=================================
   footer styling ends here
-=================================*/ 
+=================================*/
 
-/*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
-
-
-
-}  
+/*# sourceMappingURL=style.css.map */
