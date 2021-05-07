@@ -135,7 +135,7 @@ li {
   }
 }
 
-.advice__item .advice__btn a span, .focus .wrapper .focus__list .focus__item .icon span, .banner .wrapper .slider_btn a span, .header__social span, .bar1,
+.brands .wrapper .brand_btn a span, .advice__item .advice__btn a span, .focus .wrapper .focus__list .focus__item .icon span, .banner .wrapper .slider_btn a span, .header__social span, .bar1,
 .bar2,
 .bar3 {
   text-indent: -99999px;
@@ -540,6 +540,42 @@ header .wrapper .header__nav .header__menu .menu__item--active {
 }
 
 /* Learing section ends here */
+/* Brands section start here */
+.brands .wrapper {
+  padding: 35px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+.brands .wrapper .brand_btn a::after {
+  content: "";
+  margin: 0 35px;
+  color: #1a1a1a;
+  font-family: fontAwesome;
+  font-size: 20px;
+}
+.brands .wrapper .brand_btn--next a::after {
+  content: "";
+}
+.brands .wrapper .brand__slider {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+.brands .wrapper .brand__slider .brand__slide {
+  margin: 0 5%;
+}
+
+/* Brands section ends here */
 /*=================================
   main styling ends here
 =================================*/

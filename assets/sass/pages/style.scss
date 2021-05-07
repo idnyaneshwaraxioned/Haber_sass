@@ -336,6 +336,37 @@ header {
 	}
 }
 /* Learing section ends here */
+
+/* Brands section start here */
+.brands {
+	.wrapper {
+		padding: 35px 0;
+		@include flex (flex,space-between,center);
+		.brand_btn a {
+			&::after {
+			content: '\f053';
+			margin: 0 35px;
+			color: lighten($dark, 10%);
+			font-family: fontAwesome;
+			font-size: 20px;
+			}
+			span {
+				@extend %text-indent;
+			}
+		}
+		.brand_btn--next a::after {
+			content: '\f054';
+		}
+		.brand__slider {
+			width: 85%;
+			@include flex(flex,space-between,center);
+			.brand__slide {
+				margin: 0 5%;
+			}
+		}
+	}
+}
+/* Brands section ends here */
 /*=================================
   main styling ends here
 =================================*/
